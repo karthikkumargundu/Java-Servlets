@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ page import ="java.util.*,com.ltts.demowebproject.model.*,com.ltts.demowebproject.Dao.*"  %>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,21 +8,26 @@
 <title>Insert title here</title>
 </head>
 <body>
-  <%@ page import ="java.util.*,com.ltts.demowebproject.model.*,com.ltts.demowebproject.Dao.*" %>
-  <%
-  PlayerDao pd=new PlayerDao();
-  Set<String> teamname = new TreeSet<String>();
-  List<Player> li=pd.getAllPlayers();
-  for(Player p:li)
-  {
-	  teamname.add(p.getCountry());
-  }
-  %>
-  <%
-for(String str:teamname){
-	 %>
-	 <a href="viewplayer.jsp?tname=<%=str%>"><%=str%></a> <br><br>
-	 <%} %>
+ <%
+TeamDao td=new TeamDao();
+List<Team> li=td.getAllTeams();
+%>
+<table>
+<tr>
+<th>Team id</th>
+<th>Team Name</th>
 
+<th></th>
+</tr>
+<%
+for(Team t:li){
+%>
+<tr>
+<td><%=t.getTeamid() %></td>
+<td><%=t.getTeamname() %></td>
+<td><a href="editplayer.jsp?id=<%=t.getTeamid()%>">Update</a></td>
+</tr>
+<%} %>
+</table>
 </body>
 </html>

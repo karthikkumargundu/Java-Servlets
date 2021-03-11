@@ -31,7 +31,7 @@ public class PlayerDao {
 		Connection mc=MyConnection.getConnection(); // TRanfers control to another 
 		Statement ps=mc.createStatement();
 		ResultSet rs=ps.executeQuery("select * from Player");
-		//Player p=new Player();
+		Player p=new Player();
 		while(rs.next()) {
 			li.add(new Player(rs.getInt(1),rs.getString(2),rs.getString(3)));
 			

@@ -66,13 +66,13 @@ public class InsertPlayerServlet extends HttpServlet {
 			b=pd.insertPlayer(p); // Control TRanfers to Dao file
 			rd=request.getRequestDispatcher("success.html");
 			rd.forward(request, response);
-			//System.out.println("Successfully Inserted...");
+			System.out.println("Successfully Inserted...");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			out.write("Already Player id Used: "+e);
-			//rd=request.getRequestDispatcher("addplayer.html");
+			rd=request.getRequestDispatcher("addplayer.html");
 			
-			//   rd.include(request, response);
+			 rd.include(request, response);
 			e.printStackTrace();
 		}
 		
