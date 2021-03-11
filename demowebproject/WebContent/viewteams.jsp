@@ -12,15 +12,15 @@
   PlayerDao pd=new PlayerDao();
   Set<String> teamname = new TreeSet<String>();
   List<Player> li=pd.getAllPlayers();
-  for(Player p:li){
+  for(Player p:li)
+  {
 	  teamname.add(p.getCountry());
   }
-  
   %>
   <%
 for(String str:teamname){
 	 %>
-	 <a href="viewteamplayers.jsp?tname=<%=str%>"><%=str%></a> <br><br>
+	 <a href="viewplayer.jsp?tname=<%=str%>"><%=str%></a> <br><br>
 	 <%} %>
 
 </body>

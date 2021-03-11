@@ -12,7 +12,7 @@
 PlayerDao pd=new PlayerDao();
 List<Player> li=pd.getAllPlayers();
 List<Player> nli=new ArrayList<Player>();
-String name=request.getParameter("tname");
+String name=request.getParameter("teamname");
 for(Player p: li){
 	if(p.getCountry().equalsIgnoreCase(name)){
 		nli.add(p);

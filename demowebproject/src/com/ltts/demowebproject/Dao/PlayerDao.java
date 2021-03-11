@@ -15,7 +15,7 @@ public class PlayerDao {
 	public boolean insertPlayer(Player p) throws Exception {
 		//fill your code
 		Connection mc=MyConnection.getConnection(); // TRanfers control to another 
-		PreparedStatement ps=mc.prepareStatement("insert into player values(?,?,?)");
+		PreparedStatement ps=mc.prepareStatement("insert into Player values(?,?,?)");
 		ps.setInt(1, p.getPlayerId());
 		ps.setString(2, p.getPlayerName());
 		ps.setString(3, p.getCountry());
@@ -30,7 +30,7 @@ public class PlayerDao {
 		List<Player> li=new ArrayList<Player>();
 		Connection mc=MyConnection.getConnection(); // TRanfers control to another 
 		Statement ps=mc.createStatement();
-		ResultSet rs=ps.executeQuery("select * from web_player");
+		ResultSet rs=ps.executeQuery("select * from Player");
 		//Player p=new Player();
 		while(rs.next()) {
 			li.add(new Player(rs.getInt(1),rs.getString(2),rs.getString(3)));

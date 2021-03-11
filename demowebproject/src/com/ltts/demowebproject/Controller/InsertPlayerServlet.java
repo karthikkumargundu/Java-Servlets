@@ -70,8 +70,9 @@ public class InsertPlayerServlet extends HttpServlet {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			out.write("Already Player id Used: "+e);
-			rd=request.getRequestDispatcher("addplayer.html");
-			rd.include(request, response);
+			//rd=request.getRequestDispatcher("addplayer.html");
+			
+			//   rd.include(request, response);
 			e.printStackTrace();
 		}
 		
