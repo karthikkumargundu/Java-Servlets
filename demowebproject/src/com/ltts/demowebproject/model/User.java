@@ -7,15 +7,9 @@ public class User {
 		private String password;
 		private String address;
 		private int DOB;
-		public User(String emailid, int mobile, String name, String password, String address, int dOB) {
-			super();
-			this.emailid = emailid;
-			this.mobile = mobile;
-			this.name = name;
-			this.password = password;
-			this.address = address;
-			DOB = dOB;
-		}
+		private String first_name;
+		private String last_name;
+		private int regdate;
 		public String getEmailid() {
 			return emailid;
 		}
@@ -52,13 +46,41 @@ public class User {
 		public void setDOB(int dOB) {
 			DOB = dOB;
 		}
+		public String getFirst_name() {
+			return first_name;
+		}
+		public void setFirst_name(String first_name) {
+			this.first_name = first_name;
+		}
+		public String getLast_name() {
+			return last_name;
+		}
+		public void setLast_name(String last_name) {
+			this.last_name = last_name;
+		}
+		public int getRegdate() {
+			return regdate;
+		}
+		public void setRegdate(int regdate) {
+			this.regdate = regdate;
+		}
+		public User(String emailid, int mobile, String name, String password, String address, int dOB,
+				String first_name, String last_name, int regdate) {
+			super();
+			this.emailid = emailid;
+			this.mobile = mobile;
+			this.name = name;
+			this.password = password;
+			this.address = address;
+			DOB = dOB;
+			this.first_name = first_name;
+			this.last_name = last_name;
+			this.regdate = regdate;
+		}
 		@Override
 		public String toString() {
 			return "User [emailid=" + emailid + ", mobile=" + mobile + ", name=" + name + ", password=" + password
-					+ ", address=" + address + ", DOB=" + DOB + "]";
+					+ ", address=" + address + ", DOB=" + DOB + ", first_name=" + first_name + ", last_name="
+					+ last_name + ", regdate=" + regdate + "]";
 		}
-		
-		
 }
-
-		
